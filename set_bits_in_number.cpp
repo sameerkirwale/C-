@@ -6,22 +6,22 @@ using namespace std ;
 int main () {
 	
 	int input_number, set_bit = 0 ; 
-	int total_bits = 32 ;
+	// int total_bits = 32 ;
 	
 	cout << "Enter the number you want : ";
 	cin >> input_number ;
 	
-	while ( total_bits > 0 ) {
+	while ( input_number != 0 ) {
 		
 		if ( input_number & 1 == 1 ) { // this returns 1 if lsb of number is 1, otherwise it returns zero
 			set_bit ++ ; 
 		}
-		else {
+		/*else {
 			set_bit += 0 ;
-		}
+		}*/
 		
 		input_number = input_number >> 1 ; // right shifting the number by 1 bit
-		total_bits -- ;
+		// total_bits -- ;
 		
 	}
 	
