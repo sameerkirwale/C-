@@ -13,7 +13,7 @@ int main () {
 		
 		digit = input_num & 1 ; // get the digit
 		
-		binary_num += ( pow ( 10, i ) * digit ) ; // covert the digit to binary form
+		binary_num += ( pow ( 10, i ) * digit ) ; // convert the digit to binary form
 		
 		input_num = input_num >> 1 ; // right shift the number
 		
