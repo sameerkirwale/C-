@@ -1,16 +1,17 @@
 //Compliment of Base 10 Integer
 
 #include <iostream>
-#include <math.h> 
+// #include <math.h> 
 using namespace std;
 
 int main () {
 	
-	unsigned int input_num, compliment = 0, digit, invert_digit, i = 0 ;
+	/* My Logic 
+	int input_num, compliment = 0, digit, invert_digit, i = 0 ;
 	
 	cin >> input_num;
 	
-	while ( input_num > 0 ) {
+	while ( input_num != 0 ) {
 	
 		digit = input_num & 1 ; // get the binary digit
 		
@@ -24,8 +25,29 @@ int main () {
 		}
 		
 		i++ ;
+	} 
+	*/
+	
+	int input_num, copy_input_num = 0 , mask = 0 , compliment ;
+	
+	cin >> input_num ;
+	
+	copy_input_num = input_num ;
+	
+	if ( input_num == 0 ) {               // egde case 
+		compliment = ! input_num ;
 	}
 	
-	cout << "Compliment of given number is :"<< compliment << endl;
+	else {
+		
+		while ( copy_input_num != 0 ) {
+			mask = mask << 1 ;
+			mask = mask | 1 ;
+			copy_input_num = copy_input_num >> 1 ;
+		}
 	
+		compliment = ( ~ input_num ) & mask ;	
+	}
+	
+	cout << "Compliment of given number is : "<< compliment << endl;
 }
